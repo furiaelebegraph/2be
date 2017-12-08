@@ -23,6 +23,7 @@
 
 body {
     background: url(../img/witewall_3.jpg) repeat left top scroll;
+    color: #5C0F8B;
 }
 
 .texto_light{
@@ -33,19 +34,71 @@ body {
     font-family: EffraBold;
 }
 
+.al_80{
+    width:80%;
+    max-width: 80px;
+}
+
+.alineado_centro{
+    text-align: center;
+}
+
+.somos{
+    font-size: 16px;
+}
+
+.somos span{
+    font-family: EffraBold;
+    font-size: 16px;
+}
+
+.justificado{
+    text-align: justify;
+}
+
+.fondo_1{
+    background-image: url(../img/fondo_2be.png);
+    background-position: left bottom;
+    background-size: 30%;
+    background-repeat: no-repeat;
+}
+
+.fondo_2{
+    background-image: url(../img/fondo_2be_2.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.fondo_3{
+    background-image: url(../img/fondo_2be_3.png);
+}
+
+.fondo_4{
+    background-image: url(../img/fondo_2be.png);
+}
+
+.blanco{
+    color: white;
+}
+
+.titulos_1{
+    font-size: 30px;
+    font-family: EffraBold;
+    letter-spacing: 30px;
+}
+
+.titulos_1 span{
+    font-size: 30px;
+    font-family: EffraLight; 
+}
+
+.parrafo{
+    font-size: 11px;
+}
 
 .al_100{
   width: 100%;
-}
-
-.alineado_cent{
-  text-align: center;
-}
-
-.titulos{
-    font-size: 40px;
-    font-weight: 100;
-
 }
 
 .bloque_3{
@@ -440,7 +493,7 @@ body {
     position: fixed;
     z-index: 1;
     top: -60px;
-    background-color: #FBC23B;
+    background-color: #5C0F8B;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -448,7 +501,7 @@ body {
 }
 
 .logo_side{
-    width: 120px;
+    width: 90px;
     margin: 40px auto;
 }
 
@@ -458,7 +511,7 @@ body {
     padding: 8px;
     text-decoration: none;
     font-size: 25px;
-    color: black;
+    color: white;
     display: block;
     transition: 0.3s;
 }
@@ -485,14 +538,14 @@ body {
 
 
 #abrir{
-    color:#FBC23B;    
+    color: white;    
     font-size: 40px;
     cursor:pointer
 }
 
 .wrap_navegador{
     position: fixed;
-    background: white;
+    background: #5C0F8B;
     width: 100%;
     top: 0;
     padding: 5px;
@@ -500,7 +553,7 @@ body {
 }
 
 .logo_empresa{
-    max-width: 144px;
+    max-width: 42px;
 }
 
 .logo_empresa img{
@@ -639,11 +692,11 @@ body {
 }
 
 .color_amarillo{
-    color: #FFBD00;
+    color: #5C0F8B;
 }
 
-.color_amarillo_back{
-    background: #FFBD00;
+.color_morado_back{
+    background: #5C0F8B;
 }
 
 .titulo_3{
@@ -655,7 +708,7 @@ body {
 }
 
 .linea_amarilla_completa{
-    background-color: #FFBD00;
+    background-color: #5C0F8B;
     margin-top: 5px;
     width: 100%;
     height: 2px;
@@ -733,7 +786,7 @@ body {
         display: flex;
         justify-content: center;
     }
-    .nav_escritorio div{
+    .nav_escritorio div a{
         cursor: pointer;
         padding: 10px 25px;
         color: #FFFFFF;

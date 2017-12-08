@@ -53,12 +53,12 @@
             <ul class="sidenav-second-level collapse" id="collapseCATEGO">
               @foreach($categorias as $categos)
                 <li>
-                  <a href="/categoria/{{$categos->id}}">{{$categos->nombre}} ({{$categos->subcate->count()}} Sub Categorias)</a>
+                  <a href="/categoria/{{$categos->id}}">{{$categos->nombre}}</a>
                 </li>
               @endforeach
             </ul>
           </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+{{--           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
             <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse"  href="#collapseSubCATEGO">
               <i class="fa fa-fw fa-table"></i>
               <span class="nav-link-text">
@@ -67,16 +67,16 @@
             <ul class="sidenav-second-level collapse" id="collapseSubCATEGO">
               @foreach($subcategorias as $subcatego)
                 <li>
-                  <a href="/subcategoria/{{$subcatego->id}}">{{$subcatego->nombre}} ({{$subcatego->produ->count()}} Productos)</a>
+                  <a href="/subcategoria/{{$subcatego->id}}">{{$subcatego->nombre}} ({{$subcatego->produ->count()}} inmuebles)</a>
                 </li>
               @endforeach
             </ul>
-          </li>
+          </li> --}}
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-            <a class="nav-link" href="{{route('producto.index')}}">
+            <a class="nav-link" href="{{route('inmueble.index')}}">
               <i class="fa fa-fw fa-wrench"></i>
               <span class="nav-link-text">
-                Productos ({{$productos->count()}})</span>
+                inmuebles ({{$inmueble->count()}})</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">

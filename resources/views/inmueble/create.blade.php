@@ -23,7 +23,7 @@
                             </form>
                         </div>
                         <div class="col-xs-6 col-centered">
-                            <form method = 'get' action = '{!!url("producto")!!}'>
+                            <form method = 'get' action = '{!!url("inmueble")!!}'>
                                 <button class = 'btn btn-danger'>Ver todos los Inmuebles</button>
                             </form>
                         </div>
@@ -53,11 +53,19 @@
                             <input id="imagen" name = "imagen" type="file" class="form-control">
                         </div>
                         <div class="form-group">
+                            <label for="titulo">Titulo</label>
+                            <input id="titulo" name = "titulo" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcion">Descripcion</label>
+                            <textarea  id="descripcion" name = "descripcion" type="text" class="form-control""></textarea>
+                        </div>
+                        <div class="form-group">
                             <label for="orden">Orden</label>
                             <input id="orden" name = "alter" type="number" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="orden">Subir Fotos</label>
+                            <label for="orden">Subir GALERIA</label>
                             <input id="photos" type="file" name="photos[]" multiple class="form-control">
                         </div>
                         <div class="form-group">

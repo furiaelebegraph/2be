@@ -25,17 +25,17 @@ Route::group(['middleware'=> 'auth'],function(){
 });
 
 Route::group(['middleware'=> 'auth'],function(){
-  Route::resource('subcategoria','subCateController', ['only' => ['create', 'store', 'index', 'edit']]);
-  Route::post('subcategoria/{id}/update','subCateController@update');
-  Route::get('subcategoria/{id}/delete','subCateController@destroy');
-  Route::get('subcategoria/{id}/deleteMsg','subCateController@DeleteMsg');
+  Route::resource('banner','BannerController', ['only' => ['create', 'store', 'index', 'edit']]);
+  Route::post('banner/{id}/update','BannerController@update');
+  Route::get('banner/{id}/delete','BannerController@destroy');
+  Route::get('banner/{id}/deleteMsg','BannerController@DeleteMsg');
 });
 
 Route::group(['middleware'=> 'auth'],function(){
-  Route::resource('producto','produController', ['only' => ['create', 'store', 'index', 'edit']]);
-  Route::post('producto/{id}/update','produController@update');
-  Route::get('producto/{id}/delete','produController@destroy');
-  Route::get('producto/{id}/deleteMsg','produController@DeleteMsg');
+  Route::resource('inmueble','InmuebleController', ['only' => ['create', 'store', 'index', 'edit']]);
+  Route::post('inmueble/{id}/update','InmuebleController@update');
+  Route::get('inmueble/{id}/delete','InmuebleController@destroy');
+  Route::get('inmueble/{id}/deleteMsg','InmuebleController@DeleteMsg');
 });
 
 Route::group(['middleware'=> 'auth'],function(){
@@ -57,9 +57,6 @@ Route::get('/ajaxIma/{id}', 'produController@ajaxIma');
 
 Route::get('producto/{id}', 'produController@show');
 
-Route::get('subcategoria/{id}', 'subCateController@show');
-
 Route::get('categoria/{id}', 'cateController@show');
 
 Route::get('/home', 'HomeController@index')->name('home');
-

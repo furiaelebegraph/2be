@@ -19,7 +19,6 @@ class CateController extends Controller
     {
         $title = 'Index - Categorias';
         $categorias = Cate::paginate(10);
-        $subcate = SubCate::all();
         return view('categoria.index', compact('categorias', 'subcate', 'title'));
     }
 

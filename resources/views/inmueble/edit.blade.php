@@ -60,17 +60,17 @@
                                     <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
                                 @endforeach
                             </select>
-                        </div>
+                        </div>{{-- 
                         <div class="form-group{{ $errors->has('subcate') ? ' has-error' : '' }}">
                             <label for="subcate" class="col-md-12 control-label">Sub Categoria</label>
                             <select name="id_subcategoria" class="form-control" id='subcate'>
                                  <option selected="selected" value="{{$producto->subcate->id}}">{{$producto->subcate->nombre}}</option>
                             </select>
-                        </div>
+                        </div> --}}
                         <div class="form-group">
                             <label for="orden">Activo</label>
                             <select class="form-control"  name="activo">
-                                <option selected="selected" value="{{$producto->activo}}">{{$producto->activo}}</option>
+                                <option selected="selected" value="{{$inmueble->activo}}">{{$inmueble->activo}}</option>
                                 <option value="si">Si</option>
                                 <option value="no">No</option>
                             </select>
@@ -78,7 +78,7 @@
                         <button class = 'btn btn-primary' type ='submit'>Update</button>
                     </form>
                     <div class="col-12">
-                        @if($producto->ima->count() <= 0)
+                        @if($inmueble->ima->count() <= 0)
                             <div class="jumbotron text-center">
                                 <div class="container">
                                     <h1 class="jumbotron-heading">No hay fotos en esta Galeria</h1>
@@ -86,8 +86,8 @@
                                       <div class="card-block">
                                         <form method='POST' action="{!! url("imagen/cargarGale")!!}" enctype="multipart/form-data">
                                             <input type="hidden" name = '_token' value = '{{Session::token()}}'>
-                                            <input type="hidden" name="id_producto" value={{$producto->id}}>
-                                            <input type="hidden" name="nombreProdu" value={{$producto->nombre}}>
+                                            <input type="hidden" name="id_inmueble" value={{$inmueble->id}}>
+                                            <input type="hidden" name="nombreProdu" value={{$inmueble->nombre}}>
                                             <div class="form-group">
                                                 <label  class="col-2 col-form-label" for="galeria">Agregar Galeria</label>
                                                 <input  class="form-control" type="file" name="galeria[]" multiple>
@@ -106,11 +106,11 @@
                                     <h1 class="jumbotron-heading">Galeria</h1>
                                     <div class="row">
                                         <div class="card-deck">
-                                            @foreach($producto->ima as $imagen)
+                                            @foreach($inmueble->ima as $imagen)
                                             <div class="card">
-                                                <img class="card-img-top" src="{{asset($imagen->imagen)}}" alt="">
+                                                <img class="card-img-top" src="{{asset($inmueble->imagen)}}" alt="">
                                                 <div class="card-block">
-                                                    <a class="btn btn-primary" href="/imagen/{{$imagen->id}}/edit">Editar</a>
+                                                    <a class="btn btn-primary" href="/imagen/{{$inmueble->id}}/edit">Editar</a>
                                                 </div>
                                             </div>
                                             @endforeach

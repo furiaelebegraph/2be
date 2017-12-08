@@ -31,7 +31,7 @@ class InmuebleController extends Controller
      */
     public function create()
     {
-        $title = 'Crear Inmuebles'
+        $title = 'Crear Inmuebles';
         $categorias = Cate::all();
         return view('inmueble.create', compact('title','categorias'));
     }
@@ -59,18 +59,20 @@ class InmuebleController extends Controller
                 $inmueble->nombre = $request->nombre;
                 $inmueble->cate_id = $request->id_categoria;
                 $inmueble->orden = $request->alter;
+                $inmueble->titulo = $request->titulo;
+                $inmueble->descripcion = $request->descripcion;
                 $inmueble->save();
                 $photos = $request->file('photos');
                 if (!empty($photos)) {
                     foreach ($photos as $indexPhoto=>$photo) {
                         $nombre = $inmueble->nombre.'_'.$indexPhoto.'_'.$photo->hashName();
-                        $path = 'img/imagenes/'.$nombre;
+                        $path = 'img/ima/'.$nombre;
                         $imagenes = new Ima();
                         Image::make($photo)->resize(null, 400, function ($constraint) {
                             $constraint->aspectRatio();
                             $constraint->upsize();
                         })->save($path);
-                        $imagenes->produ_id = $inmueble->id;
+                        $imagenes->inmueble_id = $inmueble->id;
                         $imagenes->imagen = $path;
                         $imagenes->nombre =  $inmueble->nombre.'_'.$indexPhoto.'_'.$photo->hashName();
                         $imagenes->orden = $indexPhoto;

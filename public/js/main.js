@@ -1,4 +1,7 @@
 $(document).ready(function(){    
+
+    $('.carousel-item:first-child').addClass('active');
+
   $('.nav-item a').on('click', function(){
       console.log('potato');
       $('.nav-item').removeClass('active');

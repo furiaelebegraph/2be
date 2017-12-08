@@ -38,7 +38,6 @@
                                 <thead>
                                     <tr>
                                         <td>Categoria</td>
-                                        <td>Subacategorias</td>
                                         <td>Imagen</td>
                                         <td>Orden</td>
                                         <td>BORRAR</td>
@@ -51,13 +50,6 @@
                                     @foreach($categorias as $categoria) 
                                     <tr>
                                         <td>{!!$categoria->nombre!!}</td>
-                                        <td>
-                                            @foreach($categoria->subcate as $subcategoria)
-                                                <div>
-                                                    <div>{{$subcategoria->nombre}}</div>
-                                                </div>
-                                            @endforeach
-                                        </td>
                                         <td> <img class='al_100' src="{!!$categoria->imagen!!}" alt=""> 
                                         </td>
                                         <td>

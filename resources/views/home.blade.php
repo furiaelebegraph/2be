@@ -39,30 +39,30 @@
                 </a>
             </div>
           </div>
-          <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="col-xl-3 col-sm-6 mb-3">
             <div class="card text-white bg-warning o-hidden h-100">
               <div class="card-body">
                 <div class="card-body-icon">
                   <i class="fa fa-fw fa-list"></i>
                 </div>
                 <div class="mr-5">
-                  {{$subcategorias->count()}} SubCategorias
+                  {{$banners->count()}} Banner
                 </div>
               </div>
-              <a href="{{url('subcategoria')}}" class="card-footer text-white clearfix small z-1">
-                <span class="float-left">Ver todas las SubCategorias</span>
+              <a href="{{url('banner')}}" class="card-footer text-white clearfix small z-1">
+                <span class="float-left">Ver todas los Banners</span>
                 <span class="float-right">
                   <i class="fa fa-angle-right"></i>
                 </span>
               </a>
-                <a href="{{route('subcategoria.create')}}" class="card-footer text-white clearfix small z-1">
-                    <span class="float-left">NUEVA SubCategoria</span>
+                <a href="{{route('banner.create')}}" class="card-footer text-white clearfix small z-1">
+                    <span class="float-left">NUEVO BANNER</span>
                     <span class="float-right">
                         <i class="fa fa-angle-right"></i>
                     </span>
                 </a>
             </div>
-          </div>
+          </div> 
           <div class="col-xl-3 col-sm-6 mb-3">
             <div class="card text-white bg-success o-hidden h-100">
               <div class="card-body">
@@ -70,17 +70,17 @@
                   <i class="fa fa-fw fa-shopping-cart"></i>
                 </div>
                 <div class="mr-5">
-                  {{$productos->count()}} Productos
+                  {{$inmuebles->count()}} inmuebles
                 </div>
               </div>
-                <a href="{{url('producto')}}" class="card-footer text-white clearfix small z-1">
-                    <span class="float-left">Ver todas los Productos</span>
+                <a href="{{url('inmueble')}}" class="card-footer text-white clearfix small z-1">
+                    <span class="float-left">Ver todas los inmuebles</span>
                     <span class="float-right">
                         <i class="fa fa-angle-right"></i>
                     </span>
                 </a>
-                <a href="{{route('producto.create')}}" class="card-footer text-white clearfix small z-1">
-                    <span class="float-left">NUEVO Producto</span>
+                <a href="{{route('inmueble.create')}}" class="card-footer text-white clearfix small z-1">
+                    <span class="float-left">NUEVO inmueble</span>
                     <span class="float-right">
                         <i class="fa fa-angle-right"></i>
                     </span>
@@ -102,13 +102,13 @@
               <!-- Example Social Card -->
               <div class="card mb-3">
                 
-                @foreach($ultimoproductos as $ultimoproducto)
-                    <a href="/producto/{!!$ultimoproducto->id!!}">
-                        <img class="card-img-top img-fluid w-100"  src="{{$ultimoproducto->imagen}}" alt="">
+                @foreach($ultimoinmuebles as $ultimoinmueble)
+                    <a href="/inmueble/{!!$ultimoinmueble->id!!}">
+                        <img class="card-img-top img-fluid w-100"  src="{{$ultimoinmueble->imagen}}" alt="">
                     </a>
                     <div class="card-body">
                       <h6 class="card-title mb-1">
-                        <a href="/producto/{!!$ultimoproducto->id!!}">{{$ultimoproducto->nombre}}</a>
+                        <a href="/inmueble/{!!$ultimoinmueble->id!!}">{{$ultimoinmueble->nombre}}</a>
                       </h6>
                       <p class="card-text small">These waves are looking pretty good today!
                         <a href="#">#surfsup</a>
@@ -116,17 +116,17 @@
                     </div>
                     <hr class="my-0">
                     <div class="card-body py-2 small">
-                      <a class="mr-3 d-inline-block" href="/producto/{!!$ultimoproducto->id!!}/edit">
+                      <a class="mr-3 d-inline-block" href="/inmueble/{!!$ultimoinmueble->id!!}/edit">
                         <i class="fa fa-fw fa-edit"></i>
                         Editar
                       </a>
-                      <a class="mr-3 d-inline-block" href="/producto/{!!$ultimoproducto->id!!}/delete">
+                      <a class="mr-3 d-inline-block" href="/inmueble/{!!$ultimoinmueble->id!!}/delete">
                         <i class="fa fa-fw fa-times"></i>
                         Eliminar
                       </a>
                     </div>
                     <div class="card-footer small text-muted">
-                      Creado {{$ultimoproducto->created_at->toFormattedDateString()}}
+                      Creado {{$ultimoinmueble->created_at->toFormattedDateString()}}
                     </div>
                 @endforeach
               </div>
@@ -449,13 +449,12 @@
                   </tr>
                 </tfoot>
                 <tbody>
-                    @foreach($prosdustos as $prosdusto)
+                    @foreach($inmuesbles as $prosdusto)
                     <tr>
                         <td>{{$prosdusto->nombre}}</td>
                         <td><img src="{{asset($prosdusto ->imagen)}}" alt=""></td>
-                        <td>{{$prosdusto->subcate->nombre}}</td>
-                        <td><a href="{{ route('producto.edit', $prosdusto->id) }}" class = 'viewEdit btn btn-primary btn-xs'><i class = 'material-icons'>edit</i></td>
-                        <td><a href="/producto/{!!$prosdusto->id!!}/delete" class = "delete btn btn-danger btn-xs"><i class = 'material-icons'>Borrar</i></a></td>
+                        <td><a href="{{ route('inmueble.edit', $prosdusto->id) }}" class = 'viewEdit btn btn-primary btn-xs'><i class = 'material-icons'>edit</i></td>
+                        <td><a href="/inmueble/{!!$prosdusto->id!!}/delete" class = "delete btn btn-danger btn-xs"><i class = 'material-icons'>Borrar</i></a></td>
                     </tr>
                     @endforeach
                 </tbody>

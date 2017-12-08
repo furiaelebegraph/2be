@@ -51,7 +51,7 @@
                         </div>
                         <div class="form-group">
                             <label for="orden">Orden</label>
-                            <input id="orden" name = "alter" type="number" class="form-control">
+                            <input id="orden" name="alter" type="number" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="orden">Activo</label>

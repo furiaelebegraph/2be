@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Banner;
 use Illuminate\Http\Request;
+use Image;
+
 
 class BannerController extends Controller
 {
@@ -44,7 +46,7 @@ class BannerController extends Controller
                 $imagen = $request->file('imagen');
                 $filename = time().'.'.$imagen->getClientOriginalExtension();
                 $path = 'img/banner/'.$filename;
-                Image::make($imagen)->resize(null, 400, function ($constraint) {
+                Image::make($imagen)->resize(null, 1000, function ($constraint) {
                     $constraint->aspectRatio();
                     $constraint->upsize();
                 })->save($path);
@@ -54,9 +56,9 @@ class BannerController extends Controller
 
                 $banner->nombre = $request->nombre;
 
-                $banner->activo = $request->activo;
+                $banner->activo = $request->sino;
 
-                $banner->orden = $request->orden;
+                $banner->orden = $request->alter;
 
                 $banner->save();
 
