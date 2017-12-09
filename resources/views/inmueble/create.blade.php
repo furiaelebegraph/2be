@@ -53,12 +53,16 @@
                             <input id="imagen" name = "imagen" type="file" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="titulo">Titulo</label>
+                            <label for="titulo">Descripcion Corta</label>
                             <input id="titulo" name = "titulo" type="text" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="descripcion">Descripcion</label>
+                            <label for="descripcion">Descripcion Larga</label>
                             <textarea  id="descripcion" name = "descripcion" type="text" class="form-control""></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="precio">Precio</label>
+                            <input id="precio" name = "precio" type="text" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="orden">Orden</label>

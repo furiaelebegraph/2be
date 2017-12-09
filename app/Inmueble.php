@@ -14,6 +14,6 @@ class Inmueble extends Model
     }
     protected $table = 'inmueble';
     protected $fillable = [
-        'nombre','imagen', 'cate_id', 'orden', 'titulo', 'descipcion', 'activo'
+        'nombre','imagen', 'cate_id', 'orden', 'titulo', 'descipcion', 'activo', 'precio'
     ];
 }

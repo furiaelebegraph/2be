@@ -47,6 +47,8 @@ Route::group(['middleware'=> 'auth'],function(){
   Route::get('imagen/{id}/deleteMsg','imaController@DeleteMsg');
 });
 
+Route::get('ajax-pagination',array('as'=>'pagination','uses'=>'WelcomeController@mostrarPaginacion'));
+
 Route::post('enviar_correo', 'WelcomeController@enviarCorreo');
 
 Route::get('/ajaxSucate/{id}', 'produController@ajaxSucate');

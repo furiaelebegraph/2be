@@ -1,5 +1,6 @@
 @extends('layouts.admin')
-
+    <script src="//cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea',plugins: "lists" });</script>
 @section('contenido')
     <div class="content-wrapper">
 
@@ -47,6 +48,18 @@
                             <label for="imagen">imagen</label>
                             <img src="{!! asset($inmueble->imagen)!!}" alt="">
                             <input id="imagen" name = "imagen" type="file" class="form-control" value="{!!$inmueble->imagen!!}"> 
+                        </div>
+                        <div class="form-group">
+                            <label for="titulo">Descripcion Corta</label>
+                            <input id="titulo" name = "titulo" type="text" class="form-control" value="{!!$inmueble->titulo!!}">
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcion">Descripcion Larga</label>
+                            <textarea rows="10"  id="descripcion" name = "descripcion" type="text" class="form-control" value="{!!$inmueble->descripcion!!}"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="precio">Precio</label>
+                            <input id="precio" name = "precio" type="text" class="form-control" value="{!!$inmueble->precio!!}"> 
                         </div>
                         <div class="form-group">
                             <label for="orden">Orden</label>
@@ -106,11 +119,11 @@
                                     <h1 class="jumbotron-heading">Galeria</h1>
                                     <div class="row">
                                         <div class="card-deck">
-                                            @foreach($inmueble->ima as $imagen)
+                                            @foreach($inmueble->ima as $imagents)
                                             <div class="card">
-                                                <img class="card-img-top" src="{{asset($inmueble->imagen)}}" alt="">
+                                                <img class="card-img-top" src="{{asset($imagents->imagen)}}" alt="">
                                                 <div class="card-block">
-                                                    <a class="btn btn-primary" href="/imagen/{{$inmueble->id}}/edit">Editar</a>
+                                                    <a class="btn btn-primary" href="/imagen/{{$imagents->id}}/edit">Editar</a>
                                                 </div>
                                             </div>
                                             @endforeach

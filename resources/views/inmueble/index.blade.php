@@ -41,6 +41,7 @@
                                         <td>Inmueble</td>
                                         <td>categoria</td>
                                         <td>Imagen</td>
+                                        <td>Precio</td>
                                         <td>Orden</td>
                                         <td>BORRAR</td>
                                         <td>EDITAR</td>
@@ -57,6 +58,9 @@
                                         </td>
                                         <td> 
                                             <img class='imagen_index' style='width:80px;' src="{!!$inmueble->imagen!!}" alt=""> 
+                                        </td>
+                                        <td>
+                                            {{$inmueble->precio}}
                                         </td>
                                         <td>
                                             {{$inmueble->orden}}

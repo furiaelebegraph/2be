@@ -30,6 +30,14 @@ class WelcomeController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    public function mostrarPaginacion(){
+        $inmueble = Inmueble::paginate(9);
+        if (Request::ajax()) {
+            return view('inmueble.data', compact('inmueble'));
+        }
+        return view('',compact('inmueble'));
+    }
+
     public function enviarCorreo(Request $request){
         $rules = [
             'nombre'    => 'required|max:255',

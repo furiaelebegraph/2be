@@ -10,7 +10,7 @@
     </form>
     <br>
     <div>
-        Pertenece a {{$imagen->produ->nombre}}
+        Pertenece a {{$imagen->inmueble->nombre}}
     </div>
     <form method = 'POST' action = '{!! url("imagen")!!}/{!!$imagen->
         id!!}/update'> 

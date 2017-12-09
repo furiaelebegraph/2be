@@ -34,7 +34,9 @@
                     </div>
                 </div>
                 <div class="card-group">
+                  {{dd($inmueble->ima)}}
                     @foreach($inmueble->ima as $elprodu)
+
                         <div class="card">
                             <img class="card-img-top" src="{{asset($elprodu->imagen)}}" alt="">
                             <div class="card-block">
