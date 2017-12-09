@@ -209,7 +209,7 @@ expertos que te ofrecerán la mejor opción para tu propiedad.
     </div>
 
 
-    <div class="row justify-content-center margen_50 fondo_4" id='galeria'>
+    <div class="row justify-content-center margen_50 fondo_4 no_mostrar" id='galeria'>
         <div class="col-12 alineado_centro">
             <h1 class='alineado_centro titulos_2 alineado_centro'>INMBUEBLES</h1>
             <p>La mejor inversión en bienes raices la encuentras aquí, 

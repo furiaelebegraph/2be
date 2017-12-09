@@ -26,6 +26,10 @@ body {
     color: #5C0F8B;
 }
 
+.no_mostrar{
+    display: none;
+}
+
 .texto_light{
     font-family: EffraLight;
 }
