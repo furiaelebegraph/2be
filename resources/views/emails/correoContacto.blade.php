@@ -10,5 +10,5 @@
 @endcomponent
 
 Gracias,<br>
-{{ config('app.name') }}
+**2be.site**
 @endcomponent

@@ -30,6 +30,6 @@ class EnviarCorreo extends Mailable
     public function build()
     {
         $subject = 'Contacto 2be';
-        return $this->markdown('emails.correoContacto')->with(['data', $this->data])->subject($subject);
+        return $this->markdown('emails.correoContacto')->with(['data', $this->data])->from('no-reply@2be.site')->subject($subject);
     }
 }

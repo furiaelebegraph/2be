@@ -334,6 +334,12 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 .card-register {
   max-width: 40rem; }
 
+
+
+.imagen_cate_admin{
+    width:65px;
+}
+
 footer.sticky-footer {
   position: absolute;
   right: 0;

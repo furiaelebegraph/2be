@@ -47,18 +47,19 @@ Route::group(['middleware'=> 'auth'],function(){
   Route::get('imagen/{id}/deleteMsg','imaController@DeleteMsg');
 });
 
-Route::get('ajax-pagination',array('as'=>'pagination','uses'=>'WelcomeController@mostrarPaginacion'));
+Route::get('/inmueble/data','WelcomeController@showPaginacion');
+
 
 Route::post('enviar_correo', 'WelcomeController@enviarCorreo');
 
-Route::get('/ajaxSucate/{id}', 'produController@ajaxSucate');
+Route::get('/ajax_categoria/{id}', 'WelcomeController@ajaxCategoria');
 
-Route::get('/ajaxProdu/{id}', 'produController@ajaxProdu');
-
-Route::get('/ajaxIma/{id}', 'produController@ajaxIma');
-
-Route::get('producto/{id}', 'produController@show');
+Route::get('/ajaxDetalle/{id}', 'WelcomeController@ajaxDetalle');
 
 Route::get('categoria/{id}', 'cateController@show');
+
+Route::get('banner/{id}', 'BannerController@show');
+
+Route::get('inmueble/{id}', 'InmuebleController@show');
 
 Route::get('/home', 'HomeController@index')->name('home');

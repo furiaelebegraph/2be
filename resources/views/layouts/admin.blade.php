@@ -22,6 +22,8 @@
 
     <!-- Custom styles for this template -->
     <link href="{{asset('css/sb-admin.css')}}" rel="stylesheet">
+
+    <link href="{{asset('css/helpers.min.css')}}" rel="stylesheet">
     
     <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
 
@@ -31,7 +33,7 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <a class="navbar-brand" href="#">Admin 2BE</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -53,30 +55,16 @@
             <ul class="sidenav-second-level collapse" id="collapseCATEGO">
               @foreach($categorias as $categos)
                 <li>
-                  <a href="/categoria/{{$categos->id}}">{{$categos->nombre}}</a>
+                  <a href="/categoria/{{$categos->id}}">{{$categos->nombre}} ({{$categos->inmueblis->count()}})</a>
                 </li>
               @endforeach
             </ul>
           </li>
-{{--           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse"  href="#collapseSubCATEGO">
-              <i class="fa fa-fw fa-table"></i>
-              <span class="nav-link-text">
-                Sub Categoria ({{$subcategorias->count()}})</span>
-            </a>
-            <ul class="sidenav-second-level collapse" id="collapseSubCATEGO">
-              @foreach($subcategorias as $subcatego)
-                <li>
-                  <a href="/subcategoria/{{$subcatego->id}}">{{$subcatego->nombre}} ({{$subcatego->produ->count()}} inmuebles)</a>
-                </li>
-              @endforeach
-            </ul>
-          </li> --}}
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
             <a class="nav-link" href="{{route('inmueble.index')}}">
               <i class="fa fa-fw fa-wrench"></i>
               <span class="nav-link-text">
-                inmuebles ({{$inmueble->count()}})</span>
+                Inmuebles ({{$inmuebles->count()}})</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">

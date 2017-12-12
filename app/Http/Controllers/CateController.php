@@ -76,7 +76,8 @@ class CateController extends Controller
     {
         
         $categoria = Cate::findOrfail($id);
-        return view('categoria.show',compact('title','categoria'));
+        $inmuebles = Cate::todosInmuebles($id);
+        return view('categoria.show',compact('title','categoria','inmuebles'));
     }
 
     /**

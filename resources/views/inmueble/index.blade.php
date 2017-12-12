@@ -8,7 +8,7 @@
             <!-- Breadcrumbs -->
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
-                <a href="#">Dashboard</a>
+                <a href="{{url("/home")}}">Dashboard</a>
               </li>
               <li class="breadcrumb-item active">My Dashboard</li>
             </ol>
@@ -18,15 +18,15 @@
                 <div class="col-md-12 col-xs-12 col-centered">
                     <div class="col-xs-12 col-centered">
                         <div class="row">
-                            <div class="col-xs-6 col-centered">
+                            <div class="col-6 ">
                                 <form  method = 'get' action = '{{url("/home")}}'>
-                                    <button class="button-two" type = 'submit'><span class="texto_blanco">ADMIN</span></button>
+                                    <button class="button-two btn btn-primary" type = 'submit'><span class="texto_blanco">ADMIN</span></button>
                                 </form>
                             </div>
-                            <div class="col-xs-6 col-centered">
+                            <div class="col-6 ">
                                 <form class = 'col s3' method = 'get' action = '{!!url("inmueble")!!}/create'>
                                     <div class="sub-main">
-                                      <button class="button-two" type = 'submit'><span class="texto_blanco">Crear nuevo Inmueble</span></button>
+                                      <button class="button-two btn btn-primary" type = 'submit'><span class="texto_blanco">Crear nuevo Inmueble</span></button>
                                     </div>
                                 </form>
                             </div>
@@ -66,7 +66,7 @@
                                             {{$inmueble->orden}}
                                         </td>
                                         <td>
-                                            <a href="/inmueble/{!!$inmueble->id!!}/delete" data-toggle="modal"  class = 'delete btn btn-danger btn-xs'><i class = 'material-icons'>Borrar</i></a>
+                                            <a href="/inmueble/{!!$inmueble->id!!}/delete" class = 'delete btn btn-danger btn-xs'><i class = 'material-icons'>Borrar</i></a>
                                         </td>
                                         <td>
                                             <a href="{{ route('inmueble.edit', $inmueble->id) }}" class = 'viewEdit btn btn-primary btn-xs' data-link = '/subcategoria/{!!$inmueble->id!!}/edit'><i class = 'material-icons'>edit</i></a>

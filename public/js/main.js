@@ -1,6 +1,64 @@
 $(document).ready(function(){    
 
+    $(window).on('hashchange', function() {
+        if (window.location.hash) {
+            var page = window.location.hash.replace('#', '');
+            if (page == Number.NaN || page <= 0) {
+                return false;
+            } else {
+                getData(page);
+            }
+        }
+    });
 
+
+
+    $(document).on('click', '.selecCategoria', function(e){
+      e.preventDefault();
+      let id_catego = $(this).data('categoria');
+      console.log('ajax_categoria/'+ id_catego);
+      $.ajax({
+          url: 'ajax_categoria/' + id_catego,
+          type: "get",
+          datatype: "html",
+        }).done(function(data){
+          $("#potato").empty().html(data);
+          location.hash = page;
+        });
+    });
+
+
+    $(document).on('click', '.pagination a',function(event){
+
+      event.preventDefault();
+      $('li').removeClass('active');
+      $(this).parent('li').addClass('active');
+      var page=$(this).attr('href').split('page=')[1];
+      getData(page);
+    });
+    function getData(page){
+            $.ajax(
+            {
+                url: 'inmueble/data?page=' + page,
+                type: "get",
+                datatype: "html",
+                // beforeSend: function()
+                // {
+                //     you can show your loader 
+                // }
+            })
+            .done(function(data)
+            {
+                console.log(data);
+                
+                $("#potato").empty().html(data);
+                location.hash = page;
+            })
+            .fail(function(jqXHR, ajaxOptions, thrownError)
+            {
+                  alert('No response from server');
+            });
+    }
     $('.carousel-item:first-child').addClass('active');
 
   $('.nav-item a').on('click', function(){
@@ -130,81 +188,6 @@ $(document).ready(function(){
 	      restartDelay: 2500
 	        // [number] restart delay on inactive slideshow
 	    }
-      });
-
-      $('.seleccion').on('click',function(){
-        var valorid = $(this).find("img").data('idcate');
-        console.log(valorid);
-        $.get('ajaxSucate/'+ valorid+'', function(data){
-            $('#subcate').attr('disabled',false);
-            $('#subcate').empty();
-            $('#subcate').append('<option disabled selected value> Selecciona una subcategoria </option>');
-            $.each(data, function(index, subareaObj){
-                $('#subcate').append('<option value="'+ subareaObj.id+'">'+ subareaObj.nombre +'</option>');
-            });
-            $('.cambio').empty();
-            $.each(data, function(index, subcategoriaObj){
-                $('.cambio').append('<div class="col-12 col-sm-6 col-md-3 seleccion_sub"><div class="al_100"><img class="al_100" src="'+subcategoriaObj.imagen+'" data-idsubcate="'+subcategoriaObj.id+'" class="d-block img-fluid"></div><div class=""><h3>'+subcategoriaObj.nombre+'</h3></div></div>');
-            });
-        });  
-      });
-
-
-      $("body").on('click', '.seleccion_sub', function(e){
-        e.preventDefault();
-        var id_subcate = $(this).find('img').data('idsubcate');
-        console.log(id_subcate);
-        $.get('ajaxProdu/'+ id_subcate+'', function(data){
-            $('#seleProdu').attr('disabled',false);
-            $('#seleProdu').empty();
-            $('#seleProdu').append('<option disabled selected value> Selecciona una subcategoria </option>');
-            $.each(data, function(index, produObj){
-                $('#seleProdu').append('<option value="'+ produObj.id+'">'+ produObj.nombre +'</option>');
-            }); 
-            $('.cambio').empty();
-            $.each(data, function(index, productoObj){
-                $('.cambio').append('<div class="col-12 col-sm-6 col-md-3 seleccion_pro"><div class="al_100"><img class="al_100" src="'+productoObj.imagen+'" data-idpro="'+productoObj.id+'" class="d-block img-fluid"></div><div class=""><h3>'+productoObj.nombre+'</h3></div></div>');
-            });
-
-        });
-      });
-
-
-      $("body").on('click', '.seleccion_pro', function(e){
-        e.preventDefault();
-        var id_produ = $(this).find('img').data('idpro');
-        console.log(id_produ);
-        $.get('ajaxIma/'+ id_produ+'', function(data){
-            $('#seleProdu').attr('disabled',false);
-            $('#seleProdu').empty();
-            $('#seleProdu').append('<option disabled selected value> Selecciona una subcategoria </option>');
-            $.each(data, function(index, produObj){
-                $('#seleProdu').append('<option value="'+ produObj.id+'">'+ produObj.nombre +'</option>');
-            });
-            $('.cambio').empty();
-            $.each(data, function(index, productoObj){
-                $('.cambio').append('<div class="col-12 col-sm-6 col-md-3"><div class="al_100"><img class="al_100" src="'+productoObj.imagen+'" data-idgale="'+productoObj.id+'" class="d-block img-fluid"></div><div class=""><h3>'+productoObj.nombre+'</h3></div></div>');
-            });
-        });
-      });
-
-      $('#selectCatego').on('change', function(e){
-      	$('#subcate').attr('disabled', false);
-      	$('#subcate').attr('disabled', true);
-      	var item=$(this).val();
-      	console.log(item);
-        $.get('ajaxSucate/'+ item +'', function(data){
-                $('#subcate').empty();
-                $('#subcate').attr('disabled',false);
-                $('#subcate').append('<option disabled selected value> Selecciona un producto</option>');
-                $.each(data, function(index, produObj){
-                    $('#subcate').append('<option value="'+ produObj.id+'">'+ produObj.nombre +'</option>');
-                });
-                $('.cambio').empty();
-                $.each(data, function(index, productoObj){
-                    $('.cambio').append('<div class="col-12 col-sm-6 col-md-3 seleccion_sub"><div class="al_100"><img class="al_100" src="'+productoObj.imagen+'" data-idsubcate="'+productoObj.id+'" class="d-block img-fluid"></div><div class=""><h3>'+productoObj.nombre+'</h3></div></div>');
-                });
-            });
       });
 
       $('#subcate').on('change',function(){

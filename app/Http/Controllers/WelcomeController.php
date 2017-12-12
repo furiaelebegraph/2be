@@ -17,12 +17,15 @@ class WelcomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function welcome(){
+
+
+    public function welcome(Request $request){
+
         $categorias = Cate::all();
         $banners = Banner::BannerActivo();
-        $inmuebles = Inmueble::orderBy('created_at', 'desc')->paginate(9);
+        $inmuebles = Inmueble::where('activo', '=', 'si')->orderBy('created_at', 'desc')->paginate(9);
         $galerias = Inmueble::orderBy('created_at', 'desc')->first();
-        return view('welcome', compact('categorias', 'galerias', 'inmuebles', 'banners'));
+        return view('welcome', compact('categorias', 'galerias', 'inmuebles', 'banners','inmueblis'));
     }
     /**
      * Show the form for creating a new resource.
@@ -30,12 +33,22 @@ class WelcomeController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function mostrarPaginacion(){
-        $inmueble = Inmueble::paginate(9);
-        if (Request::ajax()) {
-            return view('inmueble.data', compact('inmueble'));
-        }
-        return view('',compact('inmueble'));
+    public function showPaginacion(Request $request)
+    {
+        $inmuebles = Inmueble::paginate(9);
+        return view('inmueble.data')->with('inmuebles', $inmuebles);
+    }
+
+
+    public function ajaxCategoria($id){
+        $inmuebles = Inmueble::obtenerCatego($id);
+        return view('inmueble.data')->with('inmuebles', $inmuebles);
+    }
+
+    public function ajaxDetalle($id){
+        $inmueble = Inmueble::with('Ima')->findOrfail($id);
+
+        return view('inmueble.detalle')->with('inmueble', $inmueble);
     }
 
     public function enviarCorreo(Request $request){

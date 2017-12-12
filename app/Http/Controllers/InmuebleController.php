@@ -61,6 +61,7 @@ class InmuebleController extends Controller
                 $inmueble->orden = $request->alter;
                 $inmueble->precio = $request->precio;
                 $inmueble->titulo = $request->titulo;
+                $inmueble->activo = $request->activo;
                 $inmueble->descripcion = $request->descripcion;
                 $inmueble->save();
                 $photos = $request->file('photos');
@@ -134,6 +135,7 @@ class InmuebleController extends Controller
                 $inmueble->nombre = $request->nombre;
                 $inmueble->precio = $request->precio;
                 $inmueble->titulo = $request->titulo;
+                $inmueble->activo = $request->activo;
                 $inmueble->descripcion = $request->descripcion;
                 $inmueble->cate_id = $request->id_categoria;
                 $inmueble->orden = $request->orden;

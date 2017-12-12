@@ -209,38 +209,19 @@ expertos que te ofrecerán la mejor opción para tu propiedad.
     </div>
 
 
-    <div class="row justify-content-center margen_50 fondo_4 no_mostrar" id='galeria'>
+    <div class="row justify-content-center margen_50 fondo_4" id='galeria'>
         <div class="col-12 alineado_centro">
             <h1 class='alineado_centro titulos_2 alineado_centro'>INMBUEBLES</h1>
             <p>La mejor inversión en bienes raices la encuentras aquí, 
 MAKING DEALS</p>
         </div>
         <div class="col-12 alineado_centro categorias ">
-
-                @foreach($categorias as $categoria)
-                <a class='p-l-5 p-r-5 texto_bold' href='#' data-categoria='{{$categoria->id}}'>{{$categoria->nombre}}</a>
-                @endforeach
+            @foreach($categorias as $categoria)
+                <a class='p-l-5 p-r-5 texto_bold selecCategoria' href='#' data-categoria='{{$categoria->id}}'>{{$categoria->nombre}}</a>
+            @endforeach
         </div>
-        <div class="row justify-content-center inmueble">
-            <div class="col-11 col-sm-10 col-md-8 col-lg-7 ">
-                <div class="row cambio align-items-center ">
-                    @foreach($inmuebles as $inmueble)
-                    <div class="col-11 col-sm-6 col-md-4 seleccion p-t-10 p-b-10 ">
-                        <div class='al_100'>
-                            <img class="al_100" src="{{asset($inmueble->imagen)}}" data-idcate="{{$inmueble->id}}" class="d-block img-fluid">
-                        </div>
-                        <div class="alineado_centro">
-                            <h5>{{$inmueble->nombre}}</h5>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-
-            <div class="col-12">
-                    {{$inmuebles->render()}}
-            </div>
-            
+        <div class="row justify-content-center" id='potato'>
+            @include('inmueble.data')
         </div>
         <!-- carousel  -->  
     </div>
@@ -359,7 +340,7 @@ MAKING DEALS</p>
                 </div>
             </div>
         </div>        
-    </div>
+    </div>  
 
     <div class="row justify-content-between color_morado_back">
         <div class="col-12 p-t-20 p-b-20">
@@ -373,15 +354,11 @@ MAKING DEALS</p>
 </script>
 <script src='{{asset('js/jquery.slides.min.js')}}'></script>
 <script src='{{asset('js/main.js')}}'></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
 <script>
 
-    $('.inmueble').load('http://www.example.com/paginated/data');
-$('.pagination a').on('click', function (event) {
-    event.preventDefault();
-    if ( $(this).attr('href') != '#' ) {
-        $('.inmueble').load($(this).attr('href'));
-    }
-});
 </script>
 </body>
 </html>

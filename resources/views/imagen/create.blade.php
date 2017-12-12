@@ -8,7 +8,7 @@
         <!-- Breadcrumbs -->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
+            <a href="{{url("/home")}}">Dashboard</a>
           </li>
           <li class="breadcrumb-item active">My Dashboard</li>
         </ol>
@@ -19,7 +19,7 @@
                         <div class="row">
                             <div class="col-xs-6 col-centered">
                                 <form  method = 'get' action = '{{url("/home")}}'>
-                                    <button class="button-two" type = 'submit'><span class="texto_blanco">DASHBOARD</span></button>
+                                    <button class="button-two btn btn-primary" type = 'submit'><span class="texto_blanco">DASHBOARD</span></button>
                                 </form>
                             </div>
                             <div class="col-xs-6 col-centered">

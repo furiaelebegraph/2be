@@ -18,7 +18,7 @@ class AdminComposerProvider extends ServiceProvider
             $view->with('categorias', Cate::all());
         });
         view()->composer('layouts.admin', function($view){
-            $view->with('inmueble', Inmueble::all());
+            $view->with('inmuebles', Inmueble::all());
         });
     }
 
