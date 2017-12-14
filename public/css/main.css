@@ -118,17 +118,17 @@ body {
 }
 
 .titulos_1{
-    font-size: 30px;
+    font-size: 25px;
     font-family: EffraBold;
-    letter-spacing: 30px;
-    text-indent: 30px;
+    letter-spacing: 10px;
+    text-indent: 10px;
 }
 
 .titulos_2{
-    font-size: 40px;
+    font-size: 30px;
     font-family: EffraBold;
-    letter-spacing: 30px;
-    text-indent: 30px;
+    letter-spacing: 15px;
+    text-indent: 5px;
 }
 
 .titulos_3{
@@ -144,10 +144,10 @@ body {
 }
 
 .titulos_4{
-    font-size: 40px;
+    font-size: 30px;
+    letter-spacing: 5px;
+    text-indent: 5px;
     font-family: EffraBold;
-    letter-spacing: 10px;
-    text-indent: 10px;
 }
 
 
@@ -166,6 +166,11 @@ body {
 .categorias a:hover{
     color: #2E0849;
 }
+
+.descipciones{
+    color: #2E0849;
+}
+
 
 .pagination a, .pagination span{
     font-size: 20px;
@@ -924,7 +929,6 @@ body {
   box-shadow: 0 0.1em 0.4em rgba(0,0,0,.3);
 }
 
-
 .slidesjs-pagination li a.active, .slidesjs-pagination li a:hover.active { background-position: 0 -13px }
 
 .slidesjs-pagination li a:hover { background-position: 0 -26px }
@@ -940,6 +944,22 @@ body {
         background-position: top center;
         background-size: contain;
         background-repeat: no-repeat;
+    }
+    .titulos_1{
+        font-size: 30px;
+        letter-spacing: 30px;
+        text-indent: 30px;
+    }
+    .titulos_2{
+        font-size: 40px;
+        letter-spacing: 30px;
+        text-indent: 30px;
+    }
+    .titulos_4{
+        font-size: 40px;
+        font-family: EffraBold;
+        letter-spacing: 10px;
+        text-indent: 10px;
     }
 }
 
@@ -983,10 +1003,10 @@ body {
     margin-top: -200px;
 }
 
-
 .form-control{
     background-color: #5B6670;
     color: white;
+    padding: 15px;
 }
 
 .form-control:focus {

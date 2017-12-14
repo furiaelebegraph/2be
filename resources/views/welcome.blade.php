@@ -145,9 +145,9 @@
                     </p>
                 </div>
                 <div class="col-11 col-sm-10">
-                    <div class="row alineado_centro">
-                        <div class="col-5 col-sm-3 p-t-10 p-b-10">
-                            <div class="row">         
+                    <div class="row justify-content-center alineado_centro">
+                        <div class="col-6 col-sm-3 p-t-10 p-b-10">
+                            <div class="row">       
                                 <div class="col-12 alineado_centro">
                                     <img class='al_80' src=" {{ asset('img/icono_1.png') }} " alt="">
                                 </div>
@@ -159,7 +159,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-5 col-sm-3 p-t-10 p-b-10">
+                        <div class="col-6 col-sm-3 p-t-10 p-b-10">
                             <div class="row">         
                                 <div class="col-12 alineado_centro">
                                     <img class='al_80' src=" {{ asset('img/icono_2.png') }} " alt="">
@@ -173,7 +173,7 @@
                             </div>
 
                         </div>
-                        <div class="col-5 col-sm-3 p-t-10 p-b-10">
+                        <div class="col-6 col-sm-3 p-t-10 p-b-10">
                             <div class="row">         
                                 <div class="col-12 alineado_centro">
                                     <img class='al_80' src=" {{ asset('img/icono_2.png') }} " alt="">
@@ -188,7 +188,7 @@ inmobiliario ideal.
                                 </div>
                             </div>
                         </div>
-                        <div class="col-5 col-sm-3 p-t-10 p-b-10">
+                        <div class="col-6 col-sm-3 p-t-10 p-b-10">
                             <div class="row">         
                                 <div class="col-12 alineado_centro">
                                     <img class='al_80' src=" {{ asset('img/icono_3.png') }} " alt="">
@@ -209,7 +209,7 @@ expertos que te ofrecerán la mejor opción para tu propiedad.
     </div>
 
 
-    <div class="row justify-content-center margen_50 fondo_4" id='galeria'>
+    <div class="row justify-content-center p-b-50 fondo_4" id='galeria'>
         <div class="col-12 alineado_centro">
             <h1 class='alineado_centro titulos_2 alineado_centro'>INMBUEBLES</h1>
             <p>La mejor inversión en bienes raices la encuentras aquí, 

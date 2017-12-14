@@ -58,7 +58,7 @@
                         </div>
                         <div class="form-group">
                             <label for="descripcion">Descripcion Larga</label>
-                            <textarea  id="descripcion" name = "descripcion" type="text" class="form-control""></textarea>
+                            <textarea id="descripcion" name="descripcion" type="text" class="form-control"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="precio">Precio</label>
@@ -74,7 +74,7 @@
                         </div>
                         <div class="form-group">
                             <label for="orden">Activo</label>
-                            <select class="form-control" name="sino">
+                            <select class="form-control" name="activo">
                                 <option selected="selected"  value="si">Si</option>
                                 <option value="no">No</option>
                             </select>

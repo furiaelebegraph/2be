@@ -9,7 +9,7 @@
 	<div class="col-11 col-sm-4 display_inline">
 		<div class="row">
 			<div class="col-12">
-				{{$inmueble->nombre}}
+				<h4 class='texto_bold'>{{$inmueble->nombre}}</h4>
 			</div>
 			<div class="col-12">
 				{{$inmueble->precio}}
@@ -25,24 +25,8 @@
 <script>
 $(function(){
   $("#slides").slidesjs({
-    play: {
-      active: true,
-        // [boolean] Generate the play and stop buttons.
-        // You cannot use your own buttons. Sorry.
-      effect: "slide",
-        // [string] Can be either "slide" or "fade".
-      interval: 5000,
-        // [number] Time spent on each slide in milliseconds.
-      auto: true,
-        // [boolean] Start playing the slideshow on load.
-      swap: true,
-        // [boolean] show/hide stop and play buttons
-      pauseOnHover: false,
-        // [boolean] pause a playing slideshow on hover
-      restartDelay: 2500
-        // [number] restart delay on inactive slideshow
-    },
 	navigation: false,
+	play: false,
 
   });
 });
