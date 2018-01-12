@@ -24,20 +24,20 @@
                 </form>
                 <br>
                 <form method = 'POST' action = '{!! url("banner")!!}/{!!$banner->
-                    id!!}/update'> 
+                    id!!}/update' enctype="multipart/form-data">
                     <input type = 'hidden' name = '_token' value = '{{Session::token()}}'>
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
-                        <input id="nombre" name = "nombre" type="text" class="form-control" value="{!!$banner->nombre!!}"> 
+                        <input id="nombre" name = "nombre" type="text" class="form-control" value="{!!$banner->nombre!!}">
                     </div>
                     <div class="form-group">
                         <label for="imagen">imagen</label>
                         <img src="{!! asset($banner->imagen)!!}" alt="">
-                        <input id="imagen" name = "imagen" type="file" class="form-control" value="{!!$banner->imagen!!}"> 
+                        <input id="imagen" name = "imagen" type="file" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="orden">Orden</label>
-                        <input id="orden" name = "orden" type="text" class="form-control" value="{!!$banner->orden!!}"> 
+                        <input id="orden" name = "orden" type="text" class="form-control" value="{!!$banner->orden!!}">
                     </div>
                     <div class="form-group">
                         <label for="orden">Activo</label>

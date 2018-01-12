@@ -47,11 +47,11 @@
                                 </thead>
 
                                 <tbody>
-                                    @foreach($banners as $banner) 
+                                    @foreach($banners as $banner)
                                     <tr>
                                         <td>{!!$banner->nombre!!}</td>
-                                        <td> 
-                                            <img class='al_100' src="{!!$banner->imagen!!}" alt=""> 
+                                        <td>
+                                            <img class='ima_catalo_adminis' src="{!!$banner->imagen!!}" alt=""> 
                                         </td>
                                         <td>
                                             {{$banner->orden}}
@@ -66,10 +66,10 @@
                                             <a href = '#' class = 'viewShow btn btn-warning btn-xs' data-link = '/banner/{!!$banner->id!!}'><i class = 'material-icons'>info</i></a>
                                         </td>
                                     </tr>
-                                    @endforeach 
+                                    @endforeach
                                 </tbody>
-                            </table>    
-                        </div>    
+                            </table>
+                        </div>
                     </div>
                     {!! $banners->links() !!}
                 </div>

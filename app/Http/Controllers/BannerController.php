@@ -105,7 +105,6 @@ class BannerController extends Controller
      */
     public function update($id,Request $request)
     {
-
             $banner = Banner::findOrfail($id);
             if ($request->hasFile('imagen')) {
                 $imagen = $request->file('imagen');
@@ -117,6 +116,8 @@ class BannerController extends Controller
                 })->save($path);
 
                 $banner->imagen = 'img/banner/'.$filename;
+            }else{
+
             }
 
                 $banner->nombre = $request->nombre;

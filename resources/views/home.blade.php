@@ -16,7 +16,7 @@
         <!-- Icon Cards -->
         <div class="row">
           <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-primary o-hidden h-100">
+            <div class="card text-white color_morado3_back o-hidden h-100">
               <div class="card-body">
                 <div class="card-body-icon">
                   <i class="fa fa-list" aria-hidden="true"></i>
@@ -40,7 +40,7 @@
             </div>
           </div>
             <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-warning o-hidden h-100">
+            <div class="card text-white color_morado2_back o-hidden h-100">
               <div class="card-body">
                 <div class="card-body-icon">
                   <i class="fa fa-picture-o" aria-hidden="true"></i>
@@ -62,9 +62,9 @@
                     </span>
                 </a>
             </div>
-          </div> 
+          </div>
           <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-success o-hidden h-100">
+            <div class="card text-white color_morado1_back o-hidden h-100">
               <div class="card-body">
                 <div class="card-body-icon">
                   <i class="fa fa-home" aria-hidden="true"></i>
@@ -97,8 +97,9 @@
               <hr class="mt-2">
 
                 <!-- Example Social Card -->
-                  <div class="col-12">
-                    @foreach($ultimoinmuebles as $ultimoinmueble)
+               <div class="row">
+                @foreach($ultimoinmuebles as $ultimoinmueble)
+                  <div class="col-4">
                       <div class="card mb-3">
                             <a href="/inmueble/{!!$ultimoinmueble->id!!}">
                                 <img class="card-img-top img-fluid w-100"  src="{{$ultimoinmueble->imagen}}" alt="">
@@ -125,13 +126,15 @@
                             <div class="card-footer small text-muted">
                               Creado {{$ultimoinmueble->created_at->toFormattedDateString()}}
                             </div>
-                      </div> 
-                    @endforeach                
+                      </div>
+                      </div>
+                    @endforeach
                     <!-- Example Social Card -->
-
-
+                    </div>
+               <div class="row">
 
                     @foreach($ultimacates as $ultimacate)
+                    <div class="col-4">
                       <div class="card mb-3">
                         <a href="/categoria/{!!$ultimacate->id!!}">
                             <img class="card-img-top img-fluid w-100"  src="{{$ultimacate->imagen}}" alt="">
@@ -159,8 +162,9 @@
                           Creado {{$ultimacate->created_at->toFormattedDateString()}}
                         </div>
                       </div>
+                    </div>
                     @endforeach
-                  </div> 
+                  </div>
             <!-- Card Columns Example Social Feed -->
 
 
@@ -229,7 +233,7 @@
                     @foreach($inmuesbles as $prosdusto)
                     <tr>
                         <td>{{$prosdusto->nombre}}</td>
-                        <td><img src="{{asset($prosdusto ->imagen)}}" alt=""></td>
+                        <td><img class='w-100' src="{{asset($prosdusto ->imagen)}}" alt=""></td>
                         <td><a href="{{ route('inmueble.edit', $prosdusto->id) }}" class = 'viewEdit btn btn-primary btn-xs'><i class = 'material-icons'>edit</i></td>
                         <td><a href="/inmueble/{!!$prosdusto->id!!}/delete" class = "delete btn btn-danger btn-xs"><i class = 'material-icons'>Borrar</i></a></td>
                     </tr>

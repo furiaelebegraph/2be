@@ -8,9 +8,11 @@
     <title>Template 8</title>
 
     <!-- Fonts -->
+
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/helpers.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
 </head>
 <body id='main'>
@@ -36,11 +38,11 @@
                             <div class="col-10 nav_escritorio escritorio">
                                 <div class="row align-items-center">
                                     <div class='col-2'> <a href="#">INICIO</a></div>
-                                    <div class='col-2'><a href="#">ACERCA</a></div>
-                                    <div class='col-2'><a href="#">SERVICIOS</a></div>
-                                    <div class='col-2'><a href="#">GALERIA</a></div>
-                                    <div class='col-2'><a href="#">CONTACTO</a></div>
-    {{-- 
+                                    <div class='col-2'><a href="#acerca">ACERCA</a></div>
+                                    <div class='col-2'><a href="#servicio">SERVICIOS</a></div>
+                                    <div class='col-2'><a href="#galeria">GALERIA</a></div>
+                                    <div class='col-2'><a href="#contacto">CONTACTO</a></div>
+    {{--
                                     <div class='col '>
                                         <a href="https://www.facebook.com">
                                             <img src="http://elebeweb.com/2016/emprendedor/layout-ocho/images/facebook_small-layer%201.png" alt="">
@@ -51,7 +53,7 @@
                                     </div> --}}
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="wrap_navegador mobil">
@@ -64,10 +66,10 @@
                             </div>
                             <a href="javascript:void(0)" class="closebtn cerrar">&times;</a>
                             <a href="#">INICIO</a>
-                            <a href="#">ACERCA</a>
-                            <a href="#">SERVICIOS</a>
-                            <a href="#">GALERIA</a>
-                            <a href="#">CONTACTO</a>
+                            <a href="#acerca">ACERCA</a>
+                            <a href="#servicio">SERVICIOS</a>
+                            <a href="#galeria">GALERIA</a>
+                            <a href="#contacto">CONTACTO</a>
                         </div>
                     </div>
                 </div>
@@ -78,22 +80,22 @@
 
             <div class="carousel slide" id="carouselExampleIndicators" data-ride="carousel">
                 <ol class="carousel-indicators">
-                    <li class="active" data-target="#carouselExampleIndicators" data-slide-to="0"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  @foreach($banners as $indexKey => $banner)
+                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$indexKey}}"></li>
+                  @endforeach
                 </ol>
                 <div class="carousel-inner">
-
                     @foreach($banners as $banner)
                     <div class="carousel-item">
                         <img class="d-block w-100" src="{{$banner->imagen}}" alt="">
                     </div>
                     @endforeach
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" data-slide="prev"> 
-                    <span class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span> 
-                </a> 
-                <a class="carousel-control-next" href="#carouselExampleIndicators" data-slide="next"> 
-                    <span class="carousel-control-next-icon"></span> <span class="sr-only">Next</span> 
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" data-slide="next">
+                    <span class="carousel-control-next-icon"></span> <span class="sr-only">Next</span>
                 </a>
             </div>
 
@@ -103,9 +105,9 @@
 
 
     <div class="row justify-content-center fondo_1 p-50">
-        <div class="col-11">
+        <div class="col-11"  id='acerca'>
             <div class="row justify-content-center">
-                <div class="col-12 col-sm-6 col-md-5 col-lg-3"> 
+                <div class="col-12 col-sm-6 col-md-5 col-lg-3">
                     <img class='al_100' src="{{ asset('img/imagen_marca_1.png') }}" alt="">
                 </div>
                 <div class="col-12 col-sm-6 col-md-7 col-lg-4 justificado">
@@ -133,7 +135,7 @@
     </div>
 
     <div class="row justify-content-center fondo_2 p-t-50 p-b-100">
-        <div class="col-11 p-b-50">
+        <div class="col-11 p-b-50" id='servicio'>
             <div class="row justify-content-center">
                 <div class="col-12 col-sm-8 col-md-6 blanco alineado_centro">
                     <h1 class='alineado_centro titulos_1'>
@@ -147,7 +149,7 @@
                 <div class="col-11 col-sm-10">
                     <div class="row justify-content-center alineado_centro">
                         <div class="col-6 col-sm-3 p-t-10 p-b-10">
-                            <div class="row">       
+                            <div class="row">
                                 <div class="col-12 alineado_centro">
                                     <img class='al_80' src=" {{ asset('img/icono_1.png') }} " alt="">
                                 </div>
@@ -155,41 +157,41 @@
                                     <p class='texto_bold'>VENDER</p>
                                 </div>
                                 <div class="col-12 blanco p-t-20">
-                                    Promover tus inmuebles de la manera efectiva en el mercado adecuado.  
+                                    Promover tus inmuebles de la manera efectiva en el mercado adecuado.
                                 </div>
                             </div>
                         </div>
                         <div class="col-6 col-sm-3 p-t-10 p-b-10">
-                            <div class="row">         
+                            <div class="row">
                                 <div class="col-12 alineado_centro">
                                     <img class='al_80' src=" {{ asset('img/icono_2.png') }} " alt="">
                                 </div>
                                 <div class="col-12  titulo_servicio">
-                                    <p class='texto_bold'>COMPRAR</p> 
+                                    <p class='texto_bold'>COMPRAR</p>
                                 </div>
                                 <div class="col-12 blanco p-t-20">
-                                    Adquirir tus inmuebles de forma confiable y con la mejor oferta a tu propiedad.  
+                                    Adquirir tus inmuebles de forma confiable y con la mejor oferta a tu propiedad.
                                 </div>
                             </div>
 
                         </div>
                         <div class="col-6 col-sm-3 p-t-10 p-b-10">
-                            <div class="row">         
+                            <div class="row">
                                 <div class="col-12 alineado_centro">
                                     <img class='al_80' src=" {{ asset('img/icono_2.png') }} " alt="">
                                 </div>
                                 <div class="col-12  titulo_servicio">
-                                    <p class='texto_bold'>RENTAR</p> 
+                                    <p class='texto_bold'>RENTAR</p>
                                 </div>
                                 <div class="col-12 blanco p-t-20">
-                                    Promover tus bienes raices 
-en el mercado 
-inmobiliario ideal.  
+                                    Promover tus bienes raices
+en el mercado
+inmobiliario ideal.
                                 </div>
                             </div>
                         </div>
                         <div class="col-6 col-sm-3 p-t-10 p-b-10">
-                            <div class="row">         
+                            <div class="row">
                                 <div class="col-12 alineado_centro">
                                     <img class='al_80' src=" {{ asset('img/icono_3.png') }} " alt="">
                                 </div>
@@ -197,7 +199,7 @@ inmobiliario ideal.
                                     <p class='texto_bold'>ADMINISTRAR</p>
                                 </div>
                                 <div class="col-12 blanco p-t-20">
-                                    Gestionar la renta o venta de tu inmueble de manera profesional manejado por 
+                                    Gestionar la renta o venta de tu inmueble de manera profesional manejado por
 expertos que te ofrecerán la mejor opción para tu propiedad.
                                 </div>
                             </div>
@@ -212,10 +214,10 @@ expertos que te ofrecerán la mejor opción para tu propiedad.
     <div class="row justify-content-center p-b-50 fondo_4" id='galeria'>
         <div class="col-12 alineado_centro">
             <h1 class='alineado_centro titulos_2 alineado_centro'>INMBUEBLES</h1>
-            <p>La mejor inversión en bienes raices la encuentras aquí, 
+            <p>La mejor inversión en bienes raices la encuentras aquí,
 MAKING DEALS</p>
         </div>
-        <div class="col-12 alineado_centro categorias ">
+        <div class="col-12 alineado_centro categorias" >
             @foreach($categorias as $categoria)
                 <a class='p-l-5 p-r-5 texto_bold selecCategoria' href='#' data-categoria='{{$categoria->id}}'>{{$categoria->nombre}}</a>
             @endforeach
@@ -223,20 +225,20 @@ MAKING DEALS</p>
         <div class="row justify-content-center" id='potato'>
             @include('inmueble.data')
         </div>
-        <!-- carousel  -->  
+        <!-- carousel  -->
     </div>
 
-    
+
     <div class="row justify-content-center fondo_3 p-t-50 p-b-50">
         <div class="col-11 col-sm-10 col-md-6 alineado_centro  blanco">
             <h2 class='titulos_3'>TE OFRECEMOS</h2>
             <div class="row justify-content-center">
                 <div class="col-8">
-                    <h3 class='p-t-20 texto_bold'>VENDER, COMPRAR, RENTAR Y 
+                    <h3 class='p-t-20 texto_bold'>VENDER, COMPRAR, RENTAR Y
                     ADMINISTRAR TUS INVERSIONES</h3>
                 </div>
                 <div class="col-8 p-t-30">
-                    <p class='somos'>RESIDENCIAS, DEPARTAMENTOS, TERRENOS, 
+                    <p class='somos'>RESIDENCIAS, DEPARTAMENTOS, TERRENOS,
                         BODEGAS  Y  NAVES INDUSTRIALES.</p>
                 </div>
             </div>
@@ -250,13 +252,13 @@ MAKING DEALS</p>
                     <p class='texto_bold'>ESTUDIOS DE  INVESTIGACIÓN Y MERCADO, <br>
             ANÁLISIS FINANCIEROS Y <br>
             ASESORÍA LEGAL.</p>
-                    
+
                 </div>
             </div>
-            
+
         </div>
         <div class="col-12 p-t-50 p-b-50">
-            
+
 
             <div class="row justify-content-center">
                 <div class="col-10 alineado_centro">
@@ -271,7 +273,7 @@ MAKING DEALS</p>
                         <div class="col-12">
                             <div class="alert alert-danger">
                                 @foreach ($errors->all() as $error)
-                                {{ $error }}<br> 
+                                {{ $error }}<br>
                                 @endforeach
                             </div>
                         </div>
@@ -283,7 +285,7 @@ MAKING DEALS</p>
                             </div>
                         </div>
                         @endif
-                        <div class="col-10 col-md-8 col-centered">
+                        <div class="col-10 col-md-8 col-centered" id='contacto'>
                             <form method='POST' action='{{url('enviar_correo')}}'>
                                 <div class="form-row">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -311,13 +313,13 @@ MAKING DEALS</p>
                                     <div class="form-group col-12 alineado_centro">
                                         <button type="submit" class="btn_submit texto_bold centrado">ENVIAR</button>
                                     </div>
-                                    
+
                                 </div>
                             </form>
 
                         </div>
                     </div>
-                </div>   
+                </div>
             </div>
 
         </div>
@@ -339,8 +341,8 @@ MAKING DEALS</p>
                     <p>info@2be.sitev</p>
                 </div>
             </div>
-        </div>        
-    </div>  
+        </div>
+    </div>
 
     <div class="row justify-content-between color_morado_back">
         <div class="col-12 p-t-20 p-b-20">
@@ -355,7 +357,7 @@ MAKING DEALS</p>
 <script src='{{asset('js/jquery.slides.min.js')}}'></script>
 <script src='{{asset('js/main.js')}}'></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
 <script>
 

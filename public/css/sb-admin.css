@@ -19,6 +19,17 @@ body.fixed-nav {
   min-height: calc(100vh - 56px);
   padding-top: 1rem; }
 
+.color_morado1_back{
+  background-color: #5C0F8B;
+}
+
+.color_morado3_back{
+  background-color: #900F8B;
+}
+.color_morado2_back{
+  background-color: #5C0FD3;
+}
+
 .scroll-to-top {
   position: fixed;
   right: 15px;
@@ -334,10 +345,14 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 .card-register {
   max-width: 40rem; }
 
-
+  .ima_catalo_adminis{
+    max-width: 300px;
+    width: 100%;
+  }
 
 .imagen_cate_admin{
     width:65px;
+    height: 65px;
 }
 
 footer.sticky-footer {

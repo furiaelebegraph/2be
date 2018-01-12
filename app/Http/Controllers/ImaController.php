@@ -160,7 +160,7 @@ class ImaController extends Controller
                             $constraint->aspectRatio();
                             $constraint->upsize();
                         })->save($path);
-                        $imagenes->inmueble_id = $request->inmuebles_id;
+                        $imagenes->proyecto_id = $request->proyecto_id;
                         $imagenes->imagen = $path;
                         $imagenes->nombre =  $request->nombreInmueble.'_'.$indexPhoto.'_'.$photo->hashName();
                         $imagenes->orden = $indexPhoto;

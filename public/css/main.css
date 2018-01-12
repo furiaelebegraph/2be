@@ -26,6 +26,64 @@ body {
     color: #5C0F8B;
 }
 
+
+.img__description_layer{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  height: 70px;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .2s, visibility .2s;
+}
+
+.img__description_layer::before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(92, 15, 139, 1);
+  mix-blend-mode: multiply;
+  /* transition effect. not necessary */
+}
+
+.img__description_layer div{
+  position: relative;
+}
+
+.img__wrap:hover .img__description_layer {
+  visibility: visible;
+  opacity: 1;
+}
+
+.img__wrap{
+  position: relative;
+}
+
+.img__description {
+  transition: .2s;
+  transform: translateY(1em);
+}
+
+.img__wrap:hover .img__description {
+  transform: translateY(0);
+}
+
+.img__description h3{
+  font-size: 14px;
+}
+
 .no_mostrar{
     display: none;
 }
@@ -140,7 +198,7 @@ body {
 
 .titulos_1 span, .titulos_4 span{
     font-size: 30px;
-    font-family: EffraLight; 
+    font-family: EffraLight;
 }
 
 .titulos_4{
@@ -332,6 +390,14 @@ body {
     color: white;
 }
 
+.descripciones div{
+  color: white !important;
+}
+
+.descripciones p span{
+  color: white !important;
+}
+
 .titulo_servicio{
     color: white;
     padding-top: 20px;
@@ -340,7 +406,7 @@ body {
 
 .titulo_servicio p{
     border-bottom: 1px solid white;
-    display:inline; 
+    display:inline;
 }
 
 
@@ -643,7 +709,7 @@ body {
 
 
 #abrir{
-    color: white;    
+    color: white;
     font-size: 40px;
     cursor:pointer
 }
@@ -683,7 +749,7 @@ body {
 
 .imagen_icono img{
     height: 100%;
-    width:auto;    
+    width:auto;
 }
 
 .wrap_conoce_mas{
@@ -938,6 +1004,10 @@ body {
 #slides a:hover, #slides a:active { color: #9e2020 }
 
 
+.imagen_cate_admin{
+  width: 60px;
+  height: 60px;
+}
 @media (min-width: 560px){
     .fondo_6{
         background-image: url(../img/fondo_2be_5.png);
@@ -1026,6 +1096,7 @@ body {
     background-color: #FFCD00;
     width: 100%;
 }
+
 
 
 /*  TEMPLATE 2  */

@@ -24,7 +24,7 @@
     <link href="{{asset('css/sb-admin.css')}}" rel="stylesheet">
 
     <link href="{{asset('css/helpers.min.css')}}" rel="stylesheet">
-    
+
     <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
 
   </head>
@@ -32,7 +32,7 @@
   <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark color_morado2_back fixed-top" id="mainNav">
       <a class="navbar-brand" href="#">Admin 2BE</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

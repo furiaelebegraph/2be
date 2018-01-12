@@ -31,8 +31,8 @@ class HomeController extends Controller
         $banners = Banner::all();
 
         $inmuesbles = Inmueble::orderBy('created_at','desc')->take(5)->get();
-        $ultimoinmuebles = Inmueble::orderBy('created_at','desc')->take(1)->get();
-        $ultimacates = Cate::orderBy('created_at','desc')->take(1)->get();
+        $ultimoinmuebles = Inmueble::orderBy('created_at','desc')->take(3)->get();
+        $ultimacates = Cate::orderBy('created_at','desc')->take(3)->get();
         return view('home', compact('categorias', 'inmuebles', 'inmuesbles', 'ultimoinmuebles', 'ultimacates', 'banners'));
     }
 
