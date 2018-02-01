@@ -145,32 +145,32 @@ class ImaController extends Controller
     }
 
     public function cargarGaleria( Request $request){
-                $this->validate($request, [
-                    'galeria.*' => 'required | image',
-                ],[   
-                    'galeria'    => 'Por favor agrega imagenes.'
-                ]);
-                $photos = $request->file('galeria');
-                if (!empty($photos)) {
-                    foreach ($photos as $indexPhoto=>$photo) {
-                        $nombre = $request->nombreInmueble.'_'.$indexPhoto.'_'.$photo->hashName();
-                        $path = 'img/ima/'.$nombre;
-                        $imagenes = new Ima();
-                        Image::make($photo)->resize(null, 900, function ($constraint) {
-                            $constraint->aspectRatio();
-                            $constraint->upsize();
-                        })->save($path);
-                        $imagenes->proyecto_id = $request->proyecto_id;
-                        $imagenes->imagen = $path;
-                        $imagenes->nombre =  $request->nombreInmueble.'_'.$indexPhoto.'_'.$photo->hashName();
-                        $imagenes->orden = $indexPhoto;
-                        $imagenes->save();
-                    }
-                }else{
-                    return back()->with('info', 'No se cargaron imagenes :(');
-                }
+        $this->validate($request, [
+            'galeria.*' => 'required | image',
+        ],[   
+            'galeria'    => 'Por favor agrega imagenes.'
+        ]);
+        $photos = $request->file('galeria');
+        if (!empty($photos)) {
+            foreach ($photos as $indexPhoto=>$photo) {
+                $nombre = $request->nombreInmueble.'_'.$indexPhoto.'_'.$photo->hashName();
+                $path = 'img/ima/'.$nombre;
+                $imagenes = new Ima();
+                Image::make($photo)->resize(null, 900, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                })->save($path);
+                $imagenes->proyecto_id = $request->proyecto_id;
+                $imagenes->imagen = $path;
+                $imagenes->nombre =  $request->nombreInmueble.'_'.$indexPhoto.'_'.$photo->hashName();
+                $imagenes->orden = $indexPhoto;
+                $imagenes->save();
+            }
+        }else{
+            return back()->with('info', 'No se cargaron imagenes :(');
+        }
 
-                return redirect('inmueble');
+        return redirect('inmueble');
     }
 
 }

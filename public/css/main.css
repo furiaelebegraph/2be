@@ -866,6 +866,16 @@ body {
     color: #5C0F8B;
 }
 
+.menu_fixeado{
+  position: fixed;
+  width: 100%;
+  height: 95px;
+  z-index: 16;
+  left: auto;
+  right: auto;
+  background: #5C0F8B;
+}
+
 .color_morado_back{
     background: #5C0F8B;
 }

@@ -24,60 +24,61 @@
         </div>
     </div>
 
+    <div class="menu_fixeado">
+      <div class="row color_morado_back justify-content-center">
+          <div class="col-12">
+                  <div class="row justify-content-center">
+                      <div class="navegador_escritorio col-12">
+                          <div class="row justify-content-center centrado p-t-20 p-b-20">
+                              <div class="col">
+                                  <div class="logo_empresa alinedo_centro">
+                                      <img src="{{asset('img/empresa/logo.png')}}" alt="">
+                                  </div>
+                              </div>
+                              <div class="col-10 nav_escritorio escritorio">
+                                  <div class="row align-items-center">
+                                      <div class='col-2'> <a href="#">INICIO</a></div>
+                                      <div class='col-2'><a href="#acerca">ACERCA</a></div>
+                                      <div class='col-2'><a href="#servicio">SERVICIOS</a></div>
+                                      <div class='col-2'><a href="#galeria">INMUEBLES</a></div>
+                                      <div class='col-2'><a href="#contacto">CONTACTO</a></div>
+      {{--
+                                      <div class='col '>
+                                          <a href="https://www.facebook.com">
+                                              <img src="http://elebeweb.com/2016/emprendedor/layout-ocho/images/facebook_small-layer%201.png" alt="">
+                                          </a>
+                                          <a href="https://www.twitter.com">
+                                              <img src="http://elebeweb.com/2016/emprendedor/layout-ocho/images/twitter_small-layer%202%20copy.png" alt="">
+                                          </a>
+                                      </div> --}}
+                                  </div>
+                              </div>
 
-    <div class="row color_morado_back justify-content-center">
-        <div class="col-12">
-                <div class="row justify-content-center">
-                    <div class="navegador_escritorio col-12">
-                        <div class="row justify-content-center centrado p-t-20 p-b-20">
-                            <div class="col">
-                                <div class="logo_empresa alinedo_centro">
-                                    <img src="{{asset('img/empresa/logo.png')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="col-10 nav_escritorio escritorio">
-                                <div class="row align-items-center">
-                                    <div class='col-2'> <a href="#">INICIO</a></div>
-                                    <div class='col-2'><a href="#acerca">ACERCA</a></div>
-                                    <div class='col-2'><a href="#servicio">SERVICIOS</a></div>
-                                    <div class='col-2'><a href="#galeria">GALERIA</a></div>
-                                    <div class='col-2'><a href="#contacto">CONTACTO</a></div>
-    {{--
-                                    <div class='col '>
-                                        <a href="https://www.facebook.com">
-                                            <img src="http://elebeweb.com/2016/emprendedor/layout-ocho/images/facebook_small-layer%201.png" alt="">
-                                        </a>
-                                        <a href="https://www.twitter.com">
-                                            <img src="http://elebeweb.com/2016/emprendedor/layout-ocho/images/twitter_small-layer%202%20copy.png" alt="">
-                                        </a>
-                                    </div> --}}
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="wrap_navegador mobil">
-                        <div class='navegador'>
-                          <span id='abrir' >&#9776;</span>
-                        </div>
-                        <div id="mySidenav" class="sidenav">
-                            <div class="logo_side">
-                                <img class='al_100' src="{{asset('img/empresa/logo.png')}}" alt="">
-                            </div>
-                            <a href="javascript:void(0)" class="closebtn cerrar">&times;</a>
-                            <a href="#">INICIO</a>
-                            <a href="#acerca">ACERCA</a>
-                            <a href="#servicio">SERVICIOS</a>
-                            <a href="#galeria">GALERIA</a>
-                            <a href="#contacto">CONTACTO</a>
-                        </div>
-                    </div>
-                </div>
-        </div>
+                          </div>
+                      </div>
+                      <div class="wrap_navegador mobil">
+                          <div class='navegador'>
+                            <span id='abrir' >&#9776;</span>
+                          </div>
+                          <div id="mySidenav" class="sidenav">
+                              <div class="logo_side">
+                                  <img class='al_100' src="{{asset('img/empresa/logo.png')}}" alt="">
+                              </div>
+                              <a href="javascript:void(0)" class="closebtn cerrar">&times;</a>
+                              <a href="#">INICIO</a>
+                              <a href="#acerca">ACERCA</a>
+                              <a href="#servicio">SERVICIOS</a>
+                              <a href="#galeria">INMUEBLES</a>
+                              <a href="#contacto">CONTACTO</a>
+                          </div>
+                      </div>
+                  </div>
+          </div>
+      </div>
     </div>
-    <div class="wrap_bloque1 row">
-        <div class="bloque_1 col-12">
 
+    <div class="wrap_bloque1 row m-t-80">
+        <div class="bloque_1 col-12">
             <div class="carousel slide" id="carouselExampleIndicators" data-ride="carousel">
                 <ol class="carousel-indicators">
                   @foreach($banners as $indexKey => $banner)
@@ -138,10 +139,10 @@
         <div class="col-11 p-b-50" id='servicio'>
             <div class="row justify-content-center">
                 <div class="col-12 col-sm-8 col-md-6 blanco alineado_centro">
-                    <h1 class='alineado_centro titulos_1'>
+                    <h2 class='alineado_centro titulos_1'>
                         NUESTRO <br>
                         <span>SERVICIOS</span>
-                    </h1>
+                    </h2>
                     <p class='parrafo m-t-20 m-b-20'>
                         NOS ESPECIALIZAMOS EN VENTA, COMPRA, RENTA Y ADMINISTRACIÓN DE RESIDENCIAS, DEPARTAMENTOS, TERRENOS, BODEGAS Y NAVES INDUSTRIALES.
                     </p>
@@ -184,7 +185,7 @@
                                     <p class='texto_bold'>RENTAR</p>
                                 </div>
                                 <div class="col-12 blanco p-t-20">
-                                    Promover tus bienes raices
+                                    Promover tus bienes raíces
 en el mercado
 inmobiliario ideal.
                                 </div>
@@ -213,8 +214,8 @@ expertos que te ofrecerán la mejor opción para tu propiedad.
 
     <div class="row justify-content-center p-b-50 fondo_4" id='galeria'>
         <div class="col-12 alineado_centro">
-            <h1 class='alineado_centro titulos_2 alineado_centro'>INMBUEBLES</h1>
-            <p>La mejor inversión en bienes raices la encuentras aquí,
+            <h1 class='alineado_centro titulos_2 alineado_centro'>INMUEBLES</h1>
+            <p>La mejor inversión en bienes raíces la encuentras aquí,
 MAKING DEALS</p>
         </div>
         <div class="col-12 alineado_centro categorias" >
