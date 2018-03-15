@@ -18,10 +18,10 @@ Route::group(['prefix' => 'adminis'], function(){
 });
 
 Route::group(['middleware'=> 'auth'],function(){
-  Route::resource('categoria','cateController', ['only' => ['create', 'store', 'index', 'edit']]);
-  Route::post('categoria/{id}/update','cateController@update');
-  Route::get('categoria/{id}/delete','cateController@destroy');
-  Route::get('categoria/{id}/deleteMsg','cateController@DeleteMsg');
+  Route::resource('categoria','CateController', ['only' => ['create', 'store', 'index', 'edit']]);
+  Route::post('categoria/{id}/update','CateController@update');
+  Route::get('categoria/{id}/delete','CateController@destroy');
+  Route::get('categoria/{id}/deleteMsg','CateController@DeleteMsg');
 });
 
 Route::group(['middleware'=> 'auth'],function(){
@@ -56,7 +56,7 @@ Route::get('/ajax_categoria/{id}', 'WelcomeController@ajaxCategoria');
 
 Route::get('/ajaxDetalle/{id}', 'WelcomeController@ajaxDetalle');
 
-Route::get('categoria/{id}', 'cateController@show');
+Route::get('categoria/{id}', 'CateController@show');
 
 Route::get('banner/{id}', 'BannerController@show');
 

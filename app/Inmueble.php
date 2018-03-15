@@ -13,6 +13,10 @@ class Inmueble extends Model
     	return $this->belongsTo(Cate::class);
     }
 
+    public static function obtenerCategorias($id){
+        return Inmueble::where('activo', '=', 'si')->select('nombre','id', 'imagen', 'titulo', 'descripcion', 'precio')->orderBy('orden', 'DESC')->paginate(9);
+    }
+
     public static function obtenerCatego($id){
         return Inmueble::where('activo', '=', 'si')->where('cate_id', '=', $id)->select('nombre','id', 'imagen', 'titulo', 'descripcion', 'precio')->orderBy('orden', 'DESC')->paginate(9);
     }

@@ -35,7 +35,7 @@ class WelcomeController extends Controller
 
     public function showPaginacion(Request $request)
     {
-        $inmuebles = Inmueble::paginate(9);
+        $inmuebles = Inmueble::obtenerCategorias();
         return view('inmueble.data')->with('inmuebles', $inmuebles);
     }
 

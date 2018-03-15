@@ -3,7 +3,8 @@ $(document).ready(function(){
     $(window).on('hashchange', function() {
         if (window.location.hash) {
             var page = window.location.hash.replace('#', '');
-            if (page == Number.NaN || page <= 0) {
+            console.log(page);
+            if (isNaN(page) || page <= 0) {
                 return false;
             } else {
                 getData(page);

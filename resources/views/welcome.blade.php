@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Somos una empresa innovadora, dedicada a la asesoría, promoción y administración de bienes inmuebles">
 
-    <title>Template 8</title>
+    <title>2be Inmobiliaria</title>
 
     <!-- Fonts -->
 
@@ -223,9 +224,12 @@ MAKING DEALS</p>
                 <a class='p-l-5 p-r-5 texto_bold selecCategoria' href='#' data-categoria='{{$categoria->id}}'>{{$categoria->nombre}}</a>
             @endforeach
         </div>
-        <div class="row justify-content-center" id='potato'>
-            @include('inmueble.data')
-        </div>
+        <div class="col-12">
+            <div class="row justify-content-center" id='potato'>
+                @include('inmueble.data')
+            </div>
+            
+        </div> 
         <!-- carousel  -->
     </div>
 
@@ -339,7 +343,7 @@ MAKING DEALS</p>
                     <p>(477) 1305393  / (477) 7651304</p>
                 </div>
                 <div class="col-6 col-sm-3 p-t-20 p-b-20 alineado_centro">
-                    <p>info@2be.sitev</p>
+                    <p>info@2be.site</p>
                 </div>
             </div>
         </div>
